@@ -1,0 +1,4 @@
+*.plist
+compile*.json
+.d
+make_deps.py

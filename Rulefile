@@ -1,0 +1,22 @@
+obj/connection.o: src/connection.cpp include/constants.hpp \
+ include/networkable.hpp include/constants.hpp include/networkbuffer.hpp \
+ include/networkable.hpp include/relay.hpp include/connection.hpp \
+ include/networkbuffer.hpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+obj/relay.o: src/relay.cpp include/relay.hpp include/connection.hpp \
+ include/networkable.hpp include/constants.hpp include/networkbuffer.hpp \
+ include/connection.hpp include/constants.hpp include/networkable.hpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+obj/main.o: src/main.cpp include/relay.hpp include/connection.hpp \
+ include/networkable.hpp include/constants.hpp include/networkbuffer.hpp \
+ include/networkable.hpp include/util.hpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+obj/networkable.o: src/networkable.cpp include/networkable.hpp \
+ include/constants.hpp include/constants.hpp include/networkbuffer.hpp \
+ include/networkable.hpp include/util.hpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+obj/networkbuffer.o: src/networkbuffer.cpp include/networkbuffer.hpp \
+ include/networkable.hpp include/constants.hpp include/networkable.hpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+obj/util.o: src/util.cpp include/util.hpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
